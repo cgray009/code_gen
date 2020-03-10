@@ -67,12 +67,23 @@ DIGIT    [0-9]
 
 "\n"           {currLine++; currPos = 1;}
 
-[a-z]*	{currPos += yyleng; return IDENTIFIER;}
 
-[A-Z]*+"_"+[A-Z]*	{currPos += yyleng;  return IDENTIFIER;}
-[a-zA-Z]*+"_"{DIGIT}+	{currPos += yyleng; return IDENTIFIER;}
-[a-z]*+{DIGIT}+[a-z]*	{currPos += yyleng; return IDENTIFIER;}
-[a-z]*+"_"+[a-z]*	 {currPos += yyleng; return IDENTIFIER;}
+
+[a-z]*	{yylval.strval = strdup(yytext); currPos += yyleng; return IDENT;}
+
+[A-Z]*+"_"+[A-Z]*	{yylval.strval = strdup(yytext); currPos += yyleng; return IDENT;}
+
+[a-zA-Z]*+"_"{DIGIT}+	{yylval.strval = strdup(yytext); currPos += yyleng; return IDENT;}
+
+[a-z]*+{DIGIT}+[a-z]*	{yylval.strval = strdup(yytext); currPos += yyleng; return IDENT;}
+
+[a-z]*+"_"+[a-z]*	{yylval.strval = strdup(yytext); currPos += yyleng; return IDENT;}
+
+
+
+
+
+
 "##".*		 {}
 
 .              {printf("Error at line %d, column %d: unrecognized symbol \"%s\"\n", currLine, currPos, yytext);}

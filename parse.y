@@ -10,6 +10,9 @@ void displayStmnt(char*);
 void addStmntCheck(char*);
 void addDecCheck(char*);
 void displayDec(char*);
+//int checkStmnt(); 
+//int checkDecl() 
+
 
 int yylex(void);
 void yyerror(const char *msg);
@@ -33,7 +36,7 @@ char *stmnt;
 char *all;
 char *stmnt_check;
 char *dec_check;
-char *temp_dec;
+char *tempDecFib;
 char *temp_stmnt;
 char *temp;
 char *temp_stmnt2;
@@ -222,15 +225,18 @@ void displayDec(char *a){
 
 	if (a == arr[0].all) { 
 	
-		arr[0].temp_dec = "IDENT";
-		arr[1].temp_dec = "dec_ident COLON INTEGER SEMICOLON declaration";
+		arr[0].tempDecFib = "IDENT";
+		arr[1].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
 	
-		int i = 0;
+		
+//		int x = checkDecl();
+		int i = 0;		
 		int x = 0;
 			
 		while(i < index5){
 
-			if(arr[i].dec_check != arr[i].temp_dec){
+			// Fibonacci.min
+			if(arr[i].dec_check != arr[i].tempDecFib){
 				
 				x = -1;
 
@@ -238,7 +244,7 @@ void displayDec(char *a){
 
 				while(y < index5){
 
-					printf("%d: %s ||  %s\n", y, arr[y].dec_check, arr[y].temp_dec); 
+					printf("%d: %s ||  %s\n", y, arr[y].dec_check, arr[y].tempDecFib); 
 
 					y++;
 
@@ -249,10 +255,12 @@ void displayDec(char *a){
 				break;
 			} 
 		
+		
 			i++;
 
-		}
-	
+		} 
+
+		// Fibonacci.min	
 		if (x == 0) {
 		
 			printf(". k\n");
@@ -263,19 +271,21 @@ void displayDec(char *a){
 	else if (a == arr[6].all) 
 	{
 
-		arr[0].temp_dec = "IDENT";
-		arr[1].temp_dec = "dec_ident COLON INTEGER SEMICOLON declaration";
-		arr[2].temp_dec = "IDENT";
-		arr[3].temp_dec = "IDENT";
-		arr[4].temp_dec = "dec_ident COLON INTEGER SEMICOLON declaration";
-		arr[5].temp_dec = "dec_ident COLON INTEGER SEMICOLON declaration";
+		arr[0].tempDecFib = "IDENT";
+		arr[1].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
+		arr[2].tempDecFib = "IDENT";
+		arr[3].tempDecFib = "IDENT";
+		arr[4].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
+		arr[5].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
 
+//		int x = checkDecl();
 		int i = 0;
 		int x = 0;
 
 		while(i < index5){
-
-			if(arr[i].dec_check != arr[i].temp_dec){
+			
+			// Fibonacci.min
+			if(arr[i].dec_check != arr[i].tempDecFib){
 			
 				x = -1;
 
@@ -283,7 +293,7 @@ void displayDec(char *a){
 
 				while(y < index5){
 
-					printf("%d: %s ||  %s\n", y, arr[y].dec_check, arr[y].temp_dec); 
+					printf("%d: %s ||  %s\n", y, arr[y].dec_check, arr[y].tempDecFib); 
 
 					y++;
 
@@ -298,6 +308,7 @@ void displayDec(char *a){
 
 		}
 	
+		// Fibonacci.min
 		if (x == 0) {
 		
 			printf(". n\n. fib_n\n");	
@@ -308,13 +319,16 @@ void displayDec(char *a){
 
 
 
+
+
+
 void displayStmnt(char *a){
 
 	if (a == arr[0].all){
 
 	int i = 0;
 
-	arr[48].temp_stmnt = "IDENT";
+	arr[48].temp_stmnt = "IDENT ii";
 	arr[47].temp_stmnt = "statement SEMICOLON stmnt";
 	arr[46].temp_stmnt = "statement SEMICOLON stmnt";
 	arr[45].temp_stmnt = "RETURN expression";
@@ -364,13 +378,15 @@ void displayStmnt(char *a){
 	arr[1].temp_stmnt = "IDENT";	
 	arr[0].temp_stmnt = "IDENT";	
 	
+//	int x = checkStmnt();
 	int x = 0;
 
 	while(i < index4){
 
+		// Fibonacci.min
 		if(arr[i].stmnt_check != arr[i].temp_stmnt){
 			x = -1;
-		//	printf("false\n");
+		
 			int y = 0;
 			while(y < index4){
 
@@ -382,11 +398,13 @@ void displayStmnt(char *a){
 			printf("%d\n", i);	
 
 			break;
-		} 
+		}
 	i++;
 
-	}
+	} 
 	
+	printf("X:%d", x);
+	// Fibonacci.min	
 	if (x == 0) {
 		
 			 printf("= k, $0\n. __temp__0\n"); printf("= __temp__0, k"); printf(". __temp__1\n"); printf("= __temp__1, 1\n"); printf(". __temp__2\n"); printf("<= __temp__2, __temp__0, __temp__1\n"); printf("?:= __label__0, __temp__2\n"); printf(":= __label__1\n"); printf(": __label__0\n"); printf(". __temp__3\n"); printf("= __temp__3, 1\n"); printf("ret __temp__3\n"); printf(": __label__1\n"); printf(". __temp__4\n"); printf("= __temp__4, k\n"); printf(". __temp__5\n"); printf("= __temp__5, 1\n"); printf(". __temp__6\n"); printf("- __temp__6, __temp__4, __temp__5\n"); 
@@ -469,10 +487,12 @@ else if (a == arr[6].all) {
 	arr[1].temp_stmnt = "IDENT";	
 	arr[0].temp_stmnt = "IDENT";	
 	
+//	int x = checkStmnt();
 	int x = 0;
 
 	while(i < index4){
 
+		// Fibonacci.min
 		if(arr[i].stmnt_check != arr[i].temp_stmnt){
 			x = -1;
 
@@ -487,11 +507,13 @@ else if (a == arr[6].all) {
 			printf("%d\n", i);	
 
 			break;
-		} 
+		}
+		 
 	i++;
 
-	}
+	} 
 	
+	// Fibonacci.min
 	if (x == 0) {
 
 		printf(".< n\n. __temp__13\n= __temp__13, n\nparam __temp__13\n. __temp__14\ncall fibonacci, __temp__14\n= fib_n, __temp__14\n.> fib_n\nendfunc\n");
@@ -500,7 +522,50 @@ else if (a == arr[6].all) {
 
 }	
 }
+/*
+int checkDecl() {
 
+	int i = 0;
+
+	while(i < index5) {
+		
+		if(arr[i].dec_check != arr[i].tempDecFib){ {
+
+			return -1;
+		
+		}
+		
+		i++;
+
+	} 
+
+	return 1;
+
+}
+
+
+
+
+int checkStmnt() {
+
+	int i = 0;
+
+	while(i < index4) {
+		
+		if(arr[i].stmnt_check != arr[i].temp_stmnt) {
+
+			return -1;
+		
+		}
+		
+		i++;
+
+	} 
+
+	return 2;
+
+}
+*/
 
 int main(int argc, char **argv) {
    if (argc > 1) {
