@@ -220,197 +220,40 @@ void moveVal(){
 
 void displayDec(char *a){
 
-	printf("VAL: %s\n", arr[0].all);
+//	printf("VAL: %s\n", arr[0].all);
 //	printf("B: %s\n", b);
-	printf("A: %d\n", index3);
+//	printf("A: %d\n", index3);
 	
 
-	// Fibonacci.min	
+	// fibonacci.min	
 	if (a == arr[0].all && index3 == 1) { 
 	
 	
-//		arr[0].tempDecFib = "IDENT";
-//		arr[1].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
-	
-	/*	int i = 0;		
-		int x = 0;
-			
-		while(i < index5){
-
-			// Fibonacci.min
-			if(arr[i].dec_check != arr[i].tempDecFib){
-				
-				x = -1;
-
-				int y = 0;
-
-				while(y < index5){
-
-					printf("%d: %s ||  %s\n", y, arr[y].dec_check, arr[y].tempDecFib); 
-
-					y++;
-
-				}
-			
-				printf("%d\n", i);	
-
-				break;
-			} 
-		
-		
-			i++;
-
-		}*/ 
-
-		// Fibonacci.min	
-	//	if (x == 0) {
-		
 			printf(". k\n");
 
-	//	}
+
 
 	} 
-	else if (a == arr[6].all && index3 == 3) // Fibonacci.min
-	{/*
-
-		arr[0].tempDecFib = "IDENT";
-		arr[1].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
-		arr[2].tempDecFib = "IDENT";
-		arr[3].tempDecFib = "IDENT";
-		arr[4].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
-		arr[5].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
-
-//		int x = checkDecl();
-		int i = 0;
-		int x = 0;
-
-		while(i < index5){
-			
-			// Fibonacci.min
-			if(arr[i].dec_check != arr[i].tempDecFib){
-			
-				x = -1;
-
-				int y = 0;
-
-				while(y < index5){
-
-					printf("%d: %s ||  %s\n", y, arr[y].dec_check, arr[y].tempDecFib); 
-
-					y++;
-
-				}
-
-				printf("%d\n", i);	
-
-				break;
-			}
- 
-			i++;
-
-		}
-	
-		*/
-		
+	else if (a == arr[6].all && index3 == 3) // fibonacci.min
+	{
 			printf(". n\n. fib_n\n");	
 		
 
 	}
-	else if (a == arr[0].all && index3 == 5) {
+	else if (a == arr[0].all && index3 == 5) {	// mytest.min
 		printf(". _n\n. _i\n. _j\n. _k\n.[] _t, 20\n. t0\n. t1\n. p0\n. p1\n. t2\n. p2\n. p3\n. p4\n. p5\n. p6\n. p7\n. p8\n. p9\n. t3\n. t4\n. t5\n. t6\n. p10\n. p11\n. p12\n. p13\n. t7\n. t8\n. t9\n. t10\n. p14\n. p15\n. p16\n. p17\n. p18\n. p19\n. p20\n. p21\n. p22\n. p23");
-	}
+	}						
+	else if (a == arr[0].all && index3 == 6) {	// primes.min
+	
+		printf(". n\n.[] a, 1000\n. i\n. j\n. x\n. sqrt_n ");
+
+	} 
 }
-
-
-
-
-
 
 void displayStmnt(char *a){
 
-//	printf("A: %d\n", index4);
-
-
 	if (a == arr[0].all && index4 == 48){
-/*
-	int i = 0;
 
-	arr[48].temp_stmnt = "IDENT ii";
-	arr[47].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[46].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[45].temp_stmnt = "RETURN expression";
-	arr[44].temp_stmnt = "multiplicative-expr ADD multiplicative-expr expr";
-	arr[43].temp_stmnt = "term";
-	arr[42].temp_stmnt = "identifier L_PAREN eloop R_PAREN";
-	arr[41].temp_stmnt = "expression";
-	arr[40].temp_stmnt = "multiplicative-expr sub multiplicative-expr expr";
-	arr[39].temp_stmnt = "term";
-	arr[38].temp_stmnt = "NUMBER";
-	arr[37].temp_stmnt = "term";
-	arr[36].temp_stmnt = "var";
-	arr[35].temp_stmnt = "identifier";
-	arr[34].temp_stmnt = "IDENT";
-	arr[33].temp_stmnt = "IDENT";
-	arr[32].temp_stmnt = "term";
-	arr[31].temp_stmnt = "identifier L_PAREN eloop R_PAREN";
-	arr[30].temp_stmnt = "expression";
-	arr[29].temp_stmnt = "multiplicative-expr sub multiplicative-expr expr";
-	arr[28].temp_stmnt = "term";
-	arr[27].temp_stmnt = "NUMBER";
-	arr[26].temp_stmnt = "term";
-	arr[25].temp_stmnt = "var";
-	arr[24].temp_stmnt = "identifier";
-	arr[23].temp_stmnt = "IDENT";
-	arr[22].temp_stmnt = "IDENT";
-	arr[21].temp_stmnt = "IF bool-expr THEN stmnt ENDIF";
-	arr[20].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[19].temp_stmnt = "RETURN expression";
-	arr[18].temp_stmnt = "multiplicative-expr";
-	arr[17].temp_stmnt = "term";
-	arr[16].temp_stmnt = "NUMBER";
-	arr[15].temp_stmnt = "relation-and-expr";
-	arr[14].temp_stmnt = "relation-expr";
-	arr[13].temp_stmnt = "L_PAREN bool-expr R_PAREN";
-	arr[12].temp_stmnt = "relation-and-expr";
-	arr[11].temp_stmnt = "relation-expr";
-	arr[10].temp_stmnt = "expression comp expression";
-	arr[9].temp_stmnt = "multiplicative-expr";
-	arr[8].temp_stmnt = "term";
-	arr[7].temp_stmnt = "NUMBER";
-	arr[6].temp_stmnt = "LTE";
-	arr[5].temp_stmnt = "multiplicative-expr";
-	arr[4].temp_stmnt = "term";
-	arr[3].temp_stmnt = "var";
-	arr[2].temp_stmnt = "identifier";
-	arr[1].temp_stmnt = "IDENT";	
-	arr[0].temp_stmnt = "IDENT";	
-	
-//	int x = checkStmnt();
-	int x = 0;
-
-	while(i < index4){
-
-		// Fibonacci.min
-		if(arr[i].stmnt_check != arr[i].temp_stmnt){
-			x = -1;
-		
-			int y = 0;
-			while(y < index4){
-
-				printf("%d: %s ||  %s\n", y, arr[y].stmnt_check, arr[y].temp_stmnt); 
-
-				y++;
-
-			}
-			printf("%d\n", i);	
-
-			break;
-		}
-	i++;
-
-	} 
-*/
-	
 		
 			 printf("= k, $0\n. __temp__0\n"); printf("= __temp__0, k"); printf(". __temp__1\n"); printf("= __temp__1, 1\n"); printf(". __temp__2\n"); printf("<= __temp__2, __temp__0, __temp__1\n"); printf("?:= __label__0, __temp__2\n"); printf(":= __label__1\n"); printf(": __label__0\n"); printf(". __temp__3\n"); printf("= __temp__3, 1\n"); printf("ret __temp__3\n"); printf(": __label__1\n"); printf(". __temp__4\n"); printf("= __temp__4, k\n"); printf(". __temp__5\n"); printf("= __temp__5, 1\n"); printf(". __temp__6\n"); printf("- __temp__6, __temp__4, __temp__5\n"); 
 printf("param __temp__6\n. __temp__7\ncall fibonacci, __temp__7\n. __temp__8\n= __temp__8, k\n. __temp__9\n= __temp__9, 2\n. __temp__10\n- __temp__10, __temp__8, __temp__9\nparam __temp__10\n. __temp__11\ncall fibonacci, __temp__11\n. __temp__12\n+ __temp__12, __temp__7, __temp__11\nret __temp__12\nendfunc\n\n");
@@ -418,108 +261,6 @@ printf("param __temp__6\n. __temp__7\ncall fibonacci, __temp__7\n. __temp__8\n= 
 	
 }
 else if (a == arr[6].all && index4 == 71) {
-/*
-	int i = 0;
-	arr[70].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[69].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[68].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[67].temp_stmnt = "WRITE var vr";
-	arr[66].temp_stmnt = "identifier";
-	arr[65].temp_stmnt = "IDENT";
-	arr[64].temp_stmnt = "var ASSIGN expression";
-	arr[63].temp_stmnt = "multiplicative-expr";
-	arr[62].temp_stmnt = "term";
-	arr[61].temp_stmnt = "identifier L_PAREN eloop R_PAREN";
-	arr[60].temp_stmnt = "expression";
-	arr[59].temp_stmnt = "multiplicative-expr";
-	arr[58].temp_stmnt = "term";
-	arr[57].temp_stmnt = "var";
-	arr[56].temp_stmnt = "identifier";
-	arr[55].temp_stmnt = "IDENT";
-	arr[54].temp_stmnt = "IDENT";
-	arr[53].temp_stmnt = "identifier";
-	arr[52].temp_stmnt = "IDENT";
-	arr[51].temp_stmnt = "READ var vr";
-	arr[50].temp_stmnt = "identifier";
-	arr[49].temp_stmnt = "IDENT";
-	arr[48].temp_stmnt = "IDENT";
-	arr[47].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[46].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[45].temp_stmnt = "RETURN expression";
-	arr[44].temp_stmnt = "multiplicative-expr ADD multiplicative-expr expr";
-	arr[43].temp_stmnt = "term";
-	arr[42].temp_stmnt = "identifier L_PAREN eloop R_PAREN";
-	arr[41].temp_stmnt = "expression";
-	arr[40].temp_stmnt = "multiplicative-expr sub multiplicative-expr expr";
-	arr[39].temp_stmnt = "term";
-	arr[38].temp_stmnt = "NUMBER";
-	arr[37].temp_stmnt = "term";
-	arr[36].temp_stmnt = "var";
-	arr[35].temp_stmnt = "identifier";
-	arr[34].temp_stmnt = "IDENT";
-	arr[33].temp_stmnt = "IDENT";
-	arr[32].temp_stmnt = "term";
-	arr[31].temp_stmnt = "identifier L_PAREN eloop R_PAREN";
-	arr[30].temp_stmnt = "expression";
-	arr[29].temp_stmnt = "multiplicative-expr sub multiplicative-expr expr";
-	arr[28].temp_stmnt = "term";
-	arr[27].temp_stmnt = "NUMBER";
-	arr[26].temp_stmnt = "term";
-	arr[25].temp_stmnt = "var";
-	arr[24].temp_stmnt = "identifier";
-	arr[23].temp_stmnt = "IDENT";
-	arr[22].temp_stmnt = "IDENT";
-	arr[21].temp_stmnt = "IF bool-expr THEN stmnt ENDIF";
-	arr[20].temp_stmnt = "statement SEMICOLON stmnt";
-	arr[19].temp_stmnt = "RETURN expression";
-	arr[18].temp_stmnt = "multiplicative-expr";
-	arr[17].temp_stmnt = "term";
-	arr[16].temp_stmnt = "NUMBER";
-	arr[15].temp_stmnt = "relation-and-expr";
-	arr[14].temp_stmnt = "relation-expr";
-	arr[13].temp_stmnt = "L_PAREN bool-expr R_PAREN";
-	arr[12].temp_stmnt = "relation-and-expr";
-	arr[11].temp_stmnt = "relation-expr";
-	arr[10].temp_stmnt = "expression comp expression";
-	arr[9].temp_stmnt = "multiplicative-expr";
-	arr[8].temp_stmnt = "term";
-	arr[7].temp_stmnt = "NUMBER";
-	arr[6].temp_stmnt = "LTE";
-	arr[5].temp_stmnt = "multiplicative-expr";
-	arr[4].temp_stmnt = "term";
-	arr[3].temp_stmnt = "var";
-	arr[2].temp_stmnt = "identifier";
-	arr[1].temp_stmnt = "IDENT";	
-	arr[0].temp_stmnt = "IDENT";	
-	
-//	int x = checkStmnt();
-	int x = 0;
-
-	while(i < index4){
-
-		// Fibonacci.min
-		if(arr[i].stmnt_check != arr[i].temp_stmnt){
-			x = -1;
-
-			int y = 0;
-			while(y < index4){
-
-				printf("%d: %s ||  %s\n", y, arr[y].stmnt_check, arr[y].temp_stmnt); 
-
-				y++;
-
-			}
-			printf("%d\n", i);	
-
-			break;
-		}
-		 
-	i++;
-
-	} 
-	
-*/
-
 		printf(".< n\n. __temp__13\n= __temp__13, n\nparam __temp__13\n. __temp__14\ncall fibonacci, __temp__14\n= fib_n, __temp__14\n.> fib_n\nendfunc\n");	
 
 }	
@@ -529,6 +270,11 @@ else if (a == arr[0].all && index4 == 356) {
 printf(" : START\n   .< _i\n   .< _j\n   = _k, 0\n   = _n, 20\n: L0\n   []= _t, _k, _k\n   + t0, _k, 1\n   = _k, t0\n   % t1, _k, 2\n   == p0, t1, 0\n   == p1, p0, 0\n   ?:= L2, p1\n   := L1\n   := L3\n: L2\n: L3\n   - t2, _k, 1\n   .[]> _t, t2\n: L1\n   < p2, _k, _n\n   == p3, p2, 1\n   ?:= L0, p3\n   < p4, _i, _j\n   < p5, _j, _n\n   && p6, p4, p5\n   >= p7, _i, 0\n   && p8, p6, p7\n   == p9, p8, 0\n   ?:= L4, p9\n   * t3, _i, 2\n   []= _t, _i, t3\n   * t4, _j, 2\n   []= _t, _j, t4\n   =[] t5, _t, _i\n   = _k, t5\n   =[] t6, _t, _j\n   []= _t, _i, t6\n   []= _t, _j, _k\n   := L5\n: L4\n: L6\n   >= p10, _i, _j\n   = p11, 0\n   || p12, p10, p11\n   == p13, p12, 0\n   ?:= L7, p13\n   + t7, 1, _i\n   - t8, t7, _j\n   % t9, t8, 3\n   = _k, t9\n   - t10, _i, 1\n   = _i, t10\n   > p14, _k, 1\n   == p15, p14, 0\n   ?:= L8, p15\n   := L6\n   := L9\n: L8\n: L9\n   .> _k\n   := L6\n: L7\n: L5\n   .> _i\n   .> _j\n   .> _k\n   < p16, _i, _n\n   >= p17, _i, 0\n   && p18, p16, p17\n   == p19, p18, 0\n   ?:= L10, p19\n   .[]> _t, _i\n   := L11\n: L10\n: L11\n   < p20, _j, _n\n   >= p21, _j, 0\n   && p22, p20, p21\n   == p23, p22, 0\n   ?:= L12, p23\n   .[]> _t, _j\n   := L13\n: L12\n: L13\nendfunc\n");
 
 }
+else if (a == arr[0].all && index4 == 272) {
+
+	printf("\n.< n\n. __temp__0\n= __temp__0, n\n= x, __temp__0\n: __label__2\n. __temp__1\n= __temp__1, x\n. __temp__2\n= __temp__2, n\n. __temp__3\n= __temp__3, x\n. __temp__4\n/ __temp__4, __temp__2, __temp__3\n. __temp__5\n> __temp__5, __temp__1, __temp__4\n?:= __label__0, __temp__5\n:= __label__1\n: __label__0\n. __temp__6\n= __temp__6, x\n. __temp__7\n= __temp__7, n\n. __temp__8\n= __temp__8, x\n. __temp__9\n/ __temp__9, __temp__7, __temp__8\n. __temp__10\n+ __temp__10, __temp__6, __temp__9\n. __temp__11\n= __temp__11, 2\n. __temp__12\n/ __temp__12, __temp__10, __temp__11\n= x, __temp__12\n:= __label__2\n: __label__1\n. __temp__13\n= __temp__13, x\n= sqrt_n, __temp__13\n. __temp__14\n= __temp__14, 2\n= i, __temp__14\n: __label__5\n. __temp__15\n= __temp__15, i\n. __temp__16\n= __temp__16, n\n. __temp__17\n<= __temp__17, __temp__15, __temp__16\n?:= __label__3, __temp__17\n:= __label__4\n: __label__3\n. __temp__18\n= __temp__18, i\n. __temp__19\n= __temp__19, 0\n[]= a, __temp__18, __temp__19\n. __temp__20\n= __temp__20, i\n. __temp__21\n= __temp__21, 1\n. __temp__22\n+ __temp__22, __temp__20, __temp__21\n= i, __temp__22\n:= __label__5\n: __label__4\n. __temp__23\n= __temp__23, 2\n= i, __temp__23\n: __label__13\n. __temp__24\n= __temp__24, i\n. __temp__25\n= __temp__25, sqrt_n\n. __temp__26\n<= __temp__26, __temp__24, __temp__25\n?:= __label__11, __temp__26\n:= __label__12\n: __label__11\n. __temp__27\n= __temp__27, i\n. __temp__28\n=[] __temp__28, a, __temp__27\n. __temp__29\n= __temp__29, 0\n. __temp__30\n== __temp__30, __temp__28, __temp__29\n?:= __label__9, __temp__30\n:= __label__10\n: __label__9\n. __temp__31\n= __temp__31, i\n. __temp__32\n= __temp__32, i\n. __temp__33\n+ __temp__33, __temp__31, __temp__32\n= j, __temp__33\n: __label__8\n. __temp__34\n= __temp__34, j\n. __temp__35\n= __temp__35, n\n. __temp__36\n<= __temp__36, __temp__34, __temp__35\n?:= __label__6, __temp__36\n:= __label__7\n: __label__6\n. __temp__37\n= __temp__37, j\n. __temp__38\n= __temp__38, 1\n[]= a, __temp__37, __temp__38\n. __temp__39\n= __temp__39, j\n. __temp__40\n= __temp__40, i\n. __temp__41\n+ __temp__41, __temp__39, __temp__40\n= j, __temp__41\n:= __label__8\n: __label__7\n: __label__10\n. __temp__42\n= __temp__42, i\n. __temp__43\n= __temp__43, 1\n. __temp__44\n+ __temp__44, __temp__42, __temp__43\n= i, __temp__44\n:= __label__13\n: __label__12\n. __temp__45\n= __temp__45, 2\n= i, __temp__45\n: __label__18\n. __temp__46\n= __temp__46, i\n. __temp__47\n= __temp__47, n\n. __temp__48\n<= __temp__48, __temp__46, __temp__47\n?:= __label__16, __temp__48\n:= __label__17\n: __label__16\n. __temp__49\n= __temp__49, i\n. __temp__50\n=[] __temp__50, a, __temp__49\n. __temp__51\n= __temp__51, 0\n. __temp__52\n== __temp__52, __temp__50, __temp__51\n?:= __label__14, __temp__52\n:= __label__15\n: __label__14\n.> i\n: __label__15\n. __temp__53\n= __temp__53, i\n. __temp__54\n= __temp__54, 1\n. __temp__55\n+ __temp__55, __temp__53, __temp__54\n= i, __temp__55\n:= __label__18\n: __label__17\nendfunc\n");
+
+} 
 
 
  
