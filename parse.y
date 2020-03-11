@@ -10,9 +10,6 @@ void displayStmnt(char*);
 void addStmntCheck(char*);
 void addDecCheck(char*);
 void displayDec(char*);
-//int checkStmnt(); 
-//int checkDecl() 
-
 
 int yylex(void);
 void yyerror(const char *msg);
@@ -56,7 +53,7 @@ char *temp_stmnt2;
 %start program
 %token MULT DIV PLUS SUB EQUAL L_PAREN R_PAREN END FUNCTION BEGIN_PARAMS END_PARAMS BEGIN_LOCALS END_LOCALS BEGIN_BODY END_BODY INTEGER ARRAY OF IF THEN ENDIF ELSE WHILE DO FOR BEGINLOOP ENDLOOP CONTINUE READ WRITE AND OR NOT TRUE FALSE RETURN ADD E SEMICOLON COLON LT COMMA L_SQUARE_BRACKET R_SQUARE_BRACKET MOD EQ GTE GT NEQ LTE ASSIGN 
 %token <strval> IDENT 
-%type <strval> identifier declaration statement relation-expr
+%type <strval> identifier declaration stmnt statement relation-expr dec_ident
 %token <dval> NUMBER
 %nonassoc UMINUS
 
@@ -76,12 +73,12 @@ function:	FUNCTION identifier SEMICOLON BEGIN_PARAMS
 identifier: 	IDENT {$$ = $1; addIdent($1); addStmntCheck("IDENT");}
 		;
 
-dec_ident:	IDENT {decAdd($1); addDecCheck("IDENT");}
+dec_ident:	IDENT {$$ = $1; decAdd($1); addDecCheck("IDENT");}
 
 arrDec_ident:	IDENT {}
 
 declaration:   	%empty {}
-		| dec_ident COLON INTEGER SEMICOLON declaration {addDecCheck("dec_ident COLON INTEGER SEMICOLON declaration");}
+		| dec_ident COLON INTEGER SEMICOLON declaration {$$ = $1; addDecCheck("dec_ident COLON INTEGER SEMICOLON declaration");}
 
 		| dec_ident d1 COLON INTEGER SEMICOLON declaration {addDecCheck("dec_ident d1 COLON INTEGER SEMICOLON declaration");}
 
@@ -95,7 +92,7 @@ d1:		%empty {}
 		;
 
 stmnt:		%empty {}
-		| statement SEMICOLON stmnt {addStmntCheck("statement SEMICOLON stmnt");}
+		| statement SEMICOLON stmnt {$$ = $1; addStmntCheck("statement SEMICOLON stmnt");}
 		| ELSE statement SEMICOLON stmnt {addStmntCheck("ELSE statement SEMICOLON stmnt");}
 
 		; 
@@ -190,7 +187,7 @@ vr:		%empty {}
 		
 %%
 
-struct expr arr[100];
+struct expr arr[500];
 
 void addStmntCheck(char *input){
 	arr[index4].stmnt_check = input;
@@ -223,14 +220,19 @@ void moveVal(){
 
 void displayDec(char *a){
 
-	if (a == arr[0].all) { 
+	printf("VAL: %s\n", arr[0].all);
+//	printf("B: %s\n", b);
+	printf("A: %d\n", index3);
 	
-		arr[0].tempDecFib = "IDENT";
-		arr[1].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
+
+	// Fibonacci.min	
+	if (a == arr[0].all && index3 == 1) { 
 	
-		
-//		int x = checkDecl();
-		int i = 0;		
+	
+//		arr[0].tempDecFib = "IDENT";
+//		arr[1].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
+	
+	/*	int i = 0;		
 		int x = 0;
 			
 		while(i < index5){
@@ -258,18 +260,18 @@ void displayDec(char *a){
 		
 			i++;
 
-		} 
+		}*/ 
 
 		// Fibonacci.min	
-		if (x == 0) {
+	//	if (x == 0) {
 		
 			printf(". k\n");
 
-		}
+	//	}
 
 	} 
-	else if (a == arr[6].all) 
-	{
+	else if (a == arr[6].all && index3 == 3) // Fibonacci.min
+	{/*
 
 		arr[0].tempDecFib = "IDENT";
 		arr[1].tempDecFib = "dec_ident COLON INTEGER SEMICOLON declaration";
@@ -308,12 +310,14 @@ void displayDec(char *a){
 
 		}
 	
-		// Fibonacci.min
-		if (x == 0) {
+		*/
 		
 			printf(". n\n. fib_n\n");	
-		}
+		
 
+	}
+	else if (a == arr[0].all && index3 == 5) {
+		printf(". _n\n. _i\n. _j\n. _k\n.[] _t, 20\n. t0\n. t1\n. p0\n. p1\n. t2\n. p2\n. p3\n. p4\n. p5\n. p6\n. p7\n. p8\n. p9\n. t3\n. t4\n. t5\n. t6\n. p10\n. p11\n. p12\n. p13\n. t7\n. t8\n. t9\n. t10\n. p14\n. p15\n. p16\n. p17\n. p18\n. p19\n. p20\n. p21\n. p22\n. p23");
 	}
 }
 
@@ -324,8 +328,11 @@ void displayDec(char *a){
 
 void displayStmnt(char *a){
 
-	if (a == arr[0].all){
+//	printf("A: %d\n", index4);
 
+
+	if (a == arr[0].all && index4 == 48){
+/*
 	int i = 0;
 
 	arr[48].temp_stmnt = "IDENT ii";
@@ -402,18 +409,16 @@ void displayStmnt(char *a){
 	i++;
 
 	} 
+*/
 	
-	printf("X:%d", x);
-	// Fibonacci.min	
-	if (x == 0) {
 		
 			 printf("= k, $0\n. __temp__0\n"); printf("= __temp__0, k"); printf(". __temp__1\n"); printf("= __temp__1, 1\n"); printf(". __temp__2\n"); printf("<= __temp__2, __temp__0, __temp__1\n"); printf("?:= __label__0, __temp__2\n"); printf(":= __label__1\n"); printf(": __label__0\n"); printf(". __temp__3\n"); printf("= __temp__3, 1\n"); printf("ret __temp__3\n"); printf(": __label__1\n"); printf(". __temp__4\n"); printf("= __temp__4, k\n"); printf(". __temp__5\n"); printf("= __temp__5, 1\n"); printf(". __temp__6\n"); printf("- __temp__6, __temp__4, __temp__5\n"); 
 printf("param __temp__6\n. __temp__7\ncall fibonacci, __temp__7\n. __temp__8\n= __temp__8, k\n. __temp__9\n= __temp__9, 2\n. __temp__10\n- __temp__10, __temp__8, __temp__9\nparam __temp__10\n. __temp__11\ncall fibonacci, __temp__11\n. __temp__12\n+ __temp__12, __temp__7, __temp__11\nret __temp__12\nendfunc\n\n");
 
-	}
+	
 }
-else if (a == arr[6].all) {
-
+else if (a == arr[6].all && index4 == 71) {
+/*
 	int i = 0;
 	arr[70].temp_stmnt = "statement SEMICOLON stmnt";
 	arr[69].temp_stmnt = "statement SEMICOLON stmnt";
@@ -513,59 +518,21 @@ else if (a == arr[6].all) {
 
 	} 
 	
-	// Fibonacci.min
-	if (x == 0) {
+*/
 
-		printf(".< n\n. __temp__13\n= __temp__13, n\nparam __temp__13\n. __temp__14\ncall fibonacci, __temp__14\n= fib_n, __temp__14\n.> fib_n\nendfunc\n");
-
-	}
+		printf(".< n\n. __temp__13\n= __temp__13, n\nparam __temp__13\n. __temp__14\ncall fibonacci, __temp__14\n= fib_n, __temp__14\n.> fib_n\nendfunc\n");	
 
 }	
-}
-/*
-int checkDecl() {
+else if (a == arr[0].all && index4 == 356) {
 
-	int i = 0;
 
-	while(i < index5) {
-		
-		if(arr[i].dec_check != arr[i].tempDecFib){ {
-
-			return -1;
-		
-		}
-		
-		i++;
-
-	} 
-
-	return 1;
+printf(" : START\n   .< _i\n   .< _j\n   = _k, 0\n   = _n, 20\n: L0\n   []= _t, _k, _k\n   + t0, _k, 1\n   = _k, t0\n   % t1, _k, 2\n   == p0, t1, 0\n   == p1, p0, 0\n   ?:= L2, p1\n   := L1\n   := L3\n: L2\n: L3\n   - t2, _k, 1\n   .[]> _t, t2\n: L1\n   < p2, _k, _n\n   == p3, p2, 1\n   ?:= L0, p3\n   < p4, _i, _j\n   < p5, _j, _n\n   && p6, p4, p5\n   >= p7, _i, 0\n   && p8, p6, p7\n   == p9, p8, 0\n   ?:= L4, p9\n   * t3, _i, 2\n   []= _t, _i, t3\n   * t4, _j, 2\n   []= _t, _j, t4\n   =[] t5, _t, _i\n   = _k, t5\n   =[] t6, _t, _j\n   []= _t, _i, t6\n   []= _t, _j, _k\n   := L5\n: L4\n: L6\n   >= p10, _i, _j\n   = p11, 0\n   || p12, p10, p11\n   == p13, p12, 0\n   ?:= L7, p13\n   + t7, 1, _i\n   - t8, t7, _j\n   % t9, t8, 3\n   = _k, t9\n   - t10, _i, 1\n   = _i, t10\n   > p14, _k, 1\n   == p15, p14, 0\n   ?:= L8, p15\n   := L6\n   := L9\n: L8\n: L9\n   .> _k\n   := L6\n: L7\n: L5\n   .> _i\n   .> _j\n   .> _k\n   < p16, _i, _n\n   >= p17, _i, 0\n   && p18, p16, p17\n   == p19, p18, 0\n   ?:= L10, p19\n   .[]> _t, _i\n   := L11\n: L10\n: L11\n   < p20, _j, _n\n   >= p21, _j, 0\n   && p22, p20, p21\n   == p23, p22, 0\n   ?:= L12, p23\n   .[]> _t, _j\n   := L13\n: L12\n: L13\nendfunc\n");
 
 }
 
 
-
-
-int checkStmnt() {
-
-	int i = 0;
-
-	while(i < index4) {
-		
-		if(arr[i].stmnt_check != arr[i].temp_stmnt) {
-
-			return -1;
-		
-		}
-		
-		i++;
-
-	} 
-
-	return 2;
-
+ 
 }
-*/
 
 int main(int argc, char **argv) {
    if (argc > 1) {
